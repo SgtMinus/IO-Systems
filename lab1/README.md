@@ -20,8 +20,8 @@
 
 ## Примеры использования
 
-sgtminus@mintIOS:~/Desktop/lab1\$ echo "13+4">/dev/var2
-sgtminus@mintIOS:~/Desktop/lab1\$ cat /dev/var2
-17 sgtminus@mintIOS:~/Desktop/lab1$ echo "14*3">/dev/var2
-sgtminus@mintIOS:~/Desktop/lab1$ cat /dev/var2
+sgtminus@mintIOS:\~/Desktop/lab1$ echo "13+4">/dev/var2 <br />
+sgtminus@mintIOS:\~/Desktop/lab1$ cat /dev/var2 <br />
+17 sgtminus@mintIOS:\~/Desktop/lab1$ echo "14*3">/dev/var2 <br />
+sgtminus@mintIOS:\~/Desktop/lab1$ cat /dev/var2 <br />
 17 42
