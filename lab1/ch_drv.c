@@ -203,4 +203,4 @@ module_exit(ch_drv_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Gleb Makarov");
-MODULE_DESCRIPTION("IO Lab 2");
+MODULE_DESCRIPTION("IO Lab 1");
