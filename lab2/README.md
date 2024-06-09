@@ -22,13 +22,13 @@ make remove - выгрузка драйвера \n
 ## Примеры использования
 **Вывод разделов созданного виртуального диска**
 
-sgtminus@Ubuntu20:~/Desktop/lab2$ fdisk -l /dev/vramdisk \n
-Disk /dev/vramdisk: 50 MiB, 52428800 bytes, 102400 sectors \n
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: dos
-Disk identifier: 0x36e5756d
+sgtminus@Ubuntu20:~/Desktop/lab2$ fdisk -l /dev/vramdisk  
+Disk /dev/vramdisk: 50 MiB, 52428800 bytes, 102400 sectors  
+Units: sectors of 1 * 512 = 512 bytes  
+Sector size (logical/physical): 512 bytes / 512 bytes  
+I/O size (minimum/optimal): 512 bytes / 512 bytes  
+Disklabel type: dos  
+Disk identifier: 0x36e5756d  
 
 Device         Boot Start    End Sectors Size Id Type
 /dev/vramdisk1          1  20480   20480  10M 83 Linux
