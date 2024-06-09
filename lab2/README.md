@@ -10,8 +10,8 @@
 
 ## Инструкция по сборке
 
-make install - сборка и загрузка драйвера
-make remove - выгрузка драйвера
+make install - сборка и загрузка драйвера \n
+make remove - выгрузка драйвера \n
 
 ## Инструкция пользователя
 После загрузки модуля появятся файлы /dev/vramdisk и /dev/vramdisk<1-6>. Записать информацию на диск можно с помощью команды dd. Считать информацию можно с помощью команды hexdump.
@@ -22,8 +22,8 @@ make remove - выгрузка драйвера
 ## Примеры использования
 **Вывод разделов созданного виртуального диска**
 
-sgtminus@Ubuntu20:~/Desktop/lab2$ fdisk -l /dev/vramdisk
-Disk /dev/vramdisk: 50 MiB, 52428800 bytes, 102400 sectors
+sgtminus@Ubuntu20:~/Desktop/lab2$ fdisk -l /dev/vramdisk \n
+Disk /dev/vramdisk: 50 MiB, 52428800 bytes, 102400 sectors \n
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
