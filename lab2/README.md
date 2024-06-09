@@ -30,12 +30,12 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disklabel type: dos  
 Disk identifier: 0x36e5756d  
 
-Device         Boot Start    End Sectors Size Id Type
-/dev/vramdisk1          1  20480   20480  10M 83 Linux
-/dev/vramdisk2      20481  61440   40960  20M 83 Linux
-/dev/vramdisk3      61441 102402   40962  20M  5 Extended
-/dev/vramdisk5      61442  81921   20480  10M 83 Linux
-/dev/vramdisk6      81923 102402   20480  10M 83 Linux
+Device         Boot Start    End Sectors Size Id Type  
+/dev/vramdisk1          1  20480   20480  10M 83 Linux  
+/dev/vramdisk2      20481  61440   40960  20M 83 Linux  
+/dev/vramdisk3      61441 102402   40962  20M  5 Extended  
+/dev/vramdisk5      61442  81921   20480  10M 83 Linux  
+/dev/vramdisk6      81923 102402   20480  10M 83 Linux  
 
 
 **Запись и чтение данных в созданный виртуальный диск**
