@@ -21,7 +21,7 @@ make remove - выгрузка драйвера \n
 
 ## Примеры использования
 **Вывод разделов созданного виртуального диска**
-
+```shell
 sgtminus@Ubuntu20:~/Desktop/lab2$ fdisk -l /dev/vramdisk  
 Disk /dev/vramdisk: 50 MiB, 52428800 bytes, 102400 sectors  
 Units: sectors of 1 * 512 = 512 bytes  
@@ -36,16 +36,16 @@ Device         Boot Start    End Sectors Size Id Type
 /dev/vramdisk3      61441 102402   40962  20M  5 Extended  
 /dev/vramdisk5      61442  81921   20480  10M 83 Linux  
 /dev/vramdisk6      81923 102402   20480  10M 83 Linux  
-
+```
 
 **Запись и чтение данных в созданный виртуальный диск**
-
+```shell
 sgtminus@Ubuntu20:~/Desktop/lab2$ echo "test test" > testfile
 sgtminus@Ubuntu20:~/Desktop/lab2$ sudo dd if=testfile of=/dev/vramdisk2 count=1
 0+1 records in
 0+1 records out
 10 bytes copied, 0.000136595 s, 73.2 kB/s
-
+```
 
 
 
