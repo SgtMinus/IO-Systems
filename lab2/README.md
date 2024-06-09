@@ -43,6 +43,14 @@ sgtminus@Ubuntu20:~/Desktop/lab2$ sudo dd if=testfile of=/dev/vramdisk2 count=1
 0+1 records out
 10 bytes copied, 0.000136595 s, 73.2 kB/s
 ```
+
+```shell
+sgtminus@Ubuntu20:~/Desktop/lab2$ sudo hexdump /dev/vramdisk2
+0000000 0000 0000 0000 0000 0000 0000 0000 0000
+*
+1400000
+```
+
 **Измерение скорости передачи данных при копировании файлов между разделами созданного виртуального диска**
 
 ```shell
