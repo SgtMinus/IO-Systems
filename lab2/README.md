@@ -46,6 +46,28 @@ sgtminus@Ubuntu20:~/Desktop/lab2$ sudo dd if=testfile of=/dev/vramdisk2 count=1
 0+1 records out
 10 bytes copied, 0.000136595 s, 73.2 kB/s
 ```
+**Измерение скорости передачи данных при копировании файлов между разделами созданного виртуального диска**
 
+```shell
+sgtminus@Ubuntu20:~/Desktop/lab2$ sudo dd if=/dev/vramdisk1 of=/dev/vramdisk2
+20480+0 records in
+20480+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.0729483 s, 144 MB/s
+```
 
+**Измерение скорости передачи данных при копировании файлов между разделами виртуального и реального жестких дисков**
+
+```shell
+sgtminus@Ubuntu20:~/Desktop/lab2$ sudo dd if=/dev/vramdisk1 of=/dev/sda3
+20480+0 records in
+20480+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.0258481 s, 406 MB/s
+```
+
+```shell
+sgtminus@Ubuntu20:~/Desktop/lab2$ sudo dd of=/dev/vramdisk1 if=/dev/sda3
+20480+0 records in
+20480+0 records out
+10485760 bytes (10 MB, 10 MiB) copied, 0.0424674 s, 247 MB/s
+```
 
