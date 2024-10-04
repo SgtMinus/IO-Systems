@@ -1,8 +1,24 @@
-kmod=lab3
-obj-m += $(kmod).o
+MODULE_NAME=virt_net_if
+PATH_SRC=$(shell pwd)
+KERNEL=$(shell uname -r)
 
-all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+obj-m += $(MODULE_NAME).o
+
+all: build install
+
+build:
+	/usr/bin/make -C /lib/modules/$(KERNEL)/build M=$(PATH_SRC) modules
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	/usr/bin/make -C /lib/modules/$(KERNEL)/build M=$(PATH_SRC) clean
+
+install:
+	sudo insmod $(MODULE_NAME).ko
+	@lsmod | grep "$(MODULE_NAME)"
+	@echo "Done"
+
+uninstall:
+	sudo rmmod $(MODULE_NAME).ko
+	@sudo rm -f /dev/$(MODULE_NAME)
+	@sudo rm -f /proc/$(MODULE_NAME)
+	@echo "Done"
