@@ -8,7 +8,7 @@
 #include <linux/ip.h>
 #include <linux/udp.h>
 
-static char* link = "wlp0s20f3";
+static char* link = "enp0s3";
 module_param(link, charp, 0);
 
 static char* ifname = "vni%d";
@@ -21,47 +21,15 @@ struct priv {
     struct net_device *parent;
 };
 
-
-bool check_ip_addr(int first, int second, int third, int forth){
-    int my_first = "your ip"; //192
-    int my_second ="your ip"; //168
-    int my_third = "your ip"; //50
-    int my_forth = "your ip"; //22
-    if(my_first == first && my_second == second && my_third == third && my_forth == forth)
-        return 1;
-    return 0;
-}
-
 static char check_frame(struct sk_buff *skb, unsigned char data_shift) {
-	unsigned char *user_data_ptr = NULL;
+ unsigned char *user_data_ptr = NULL;
     struct iphdr *ip = (struct iphdr *)skb_network_header(skb);
-    struct udphdr *udp = NULL;
-    int data_len = 0;
-
-	if (IPPROTO_IP == ip->protocol) {
-        udp = (struct udphdr*)((unsigned char*)ip + (ip->ihl * 4));
-        data_len = ntohs(udp->len) - sizeof(struct udphdr);
-	// if(data_len < 100) return 0;
-        user_data_ptr = (unsigned char *)(skb->data + sizeof(struct iphdr)  + sizeof(struct udphdr)) + data_shift;
-        memcpy(data, user_data_ptr, data_len);
-        data[data_len] = '\0';
-
-        if(!check_ip_addr(ntohl(ip->daddr) >> 24, (ntohl(ip->daddr) >> 16) & 0x00FF,
-                (ntohl(ip->daddr) >> 8) & 0x0000FF, (ntohl(ip->daddr)) & 0x000000FF))
-            return 0;
-
-        printk("Captured UDP datagram, saddr: %d.%d.%d.%d\n",
+     printk("Captured IP Message, saddr: %d.%d.%d.%d\n",
                 ntohl(ip->saddr) >> 24, (ntohl(ip->saddr) >> 16) & 0x00FF,
-                (ntohl(ip->saddr) >> 8) & 0x0000FF, (ntohl(ip->saddr)) & 0x000000FF);
+                (ntohl(ip->saddr) >> 😍 & 0x0000FF, (ntohl(ip->saddr)) & 0x000000FF);
         printk("daddr: %d.%d.%d.%d\n",
                 ntohl(ip->daddr) >> 24, (ntohl(ip->daddr) >> 16) & 0x00FF,
-                (ntohl(ip->daddr) >> 8) & 0x0000FF, (ntohl(ip->daddr)) & 0x000000FF);
-
-    	printk(KERN_INFO "Data length: %d. Data:", data_len);
-        printk("%s", data);
-        return 1;
-
-    }
+                (ntohl(ip->daddr) >> 😍 & 0x0000FF, (ntohl(ip->daddr)) & 0x000000FF);
     return 0;
 }
 
